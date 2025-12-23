@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mobileMenuBtn) {
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+            document.body.classList.toggle('menu-active');
             const icon = mobileMenuBtn.querySelector('i');
             if (icon) {
                 icon.classList.toggle('fa-bars');
@@ -16,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Smooth Scroll Reveal
     const revealElements = document.querySelectorAll('.card, .hero-text, .hero-image, .section-title');
-    
+
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -40,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const btn = contactForm.querySelector('button');
             const originalText = btn.innerText;
-            
+
             btn.innerText = 'Gönderiliyor...';
             btn.disabled = true;
 
